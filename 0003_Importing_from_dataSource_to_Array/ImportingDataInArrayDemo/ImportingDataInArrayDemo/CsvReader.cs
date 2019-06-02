@@ -19,7 +19,7 @@ namespace ImportingDataInArrayDemo
 
         public Country ReadCountryFromCsvLine(string csvLine)
         {
-            string[] parts = csvLine.Split(',');
+            string[] parts = csvLine.Split(new char[] { ',' });
 
             string name = parts[0];
             string code = parts[1];
