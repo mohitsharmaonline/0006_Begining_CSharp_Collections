@@ -13,7 +13,8 @@ namespace ImportingDataInArrayDemo
 
         internal Country[] ReadFirstNCountries(int nCountries)
         {
-            return null;
+            Country[] countries = new Country[nCountries];
+            return countries;
         }
     }
 }
