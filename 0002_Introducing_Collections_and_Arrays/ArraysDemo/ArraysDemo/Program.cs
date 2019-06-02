@@ -14,19 +14,28 @@ namespace ArraysDemo
             string[] daysOfWeek = {
                 "Monday",
                 "Tuesday",      
-                "Wednesday",
+                "Wenesday",
                 "Thursday",
                 "Friday",
                 "Saturday",
                 "Sunday"
             };
 
-            Console.WriteLine("Which day do you want to display?");
-            Console.WriteLine("(Monday = 1, etc.) > ");
-            int iDay = int.Parse(Console.ReadLine());
+            Console.WriteLine("Before:");
 
-            string chosenDay = daysOfWeek[iDay-1];
-            Console.WriteLine($"That day is {chosenDay}");
+            foreach (string day in daysOfWeek)
+            {
+                Console.WriteLine(day);
+            }
+
+            daysOfWeek[2] = "Wednesday";
+
+            Console.WriteLine("\r\nAfter:");
+
+            foreach (string day in daysOfWeek)
+            {
+                Console.WriteLine(day);
+            }
         }
     }
 }
