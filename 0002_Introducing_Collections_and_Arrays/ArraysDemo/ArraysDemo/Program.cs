@@ -21,6 +21,11 @@ namespace ArraysDemo
                 "Saturday",
                 "Sunday"
             };
+
+            foreach (string day in daysOfWeek)
+            {
+                Console.WriteLine(day);
+            }
         }
     }
 }
