@@ -13,8 +13,8 @@ namespace ArraysDemo
             string monday = "Monday";
 
             string[] daysOfWeek = {
-                "Tuesday",
-                "Monday",                
+                "Monday",
+                "Tuesday",      
                 "Wednesday",
                 "Thursday",
                 "Friday",
