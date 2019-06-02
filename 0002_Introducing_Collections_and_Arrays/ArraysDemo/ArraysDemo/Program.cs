@@ -25,7 +25,7 @@ namespace ArraysDemo
             Console.WriteLine("(Monday = 1, etc.) > ");
             int iDay = int.Parse(Console.ReadLine());
 
-            string chosenDay = daysOfWeek[iDay];
+            string chosenDay = daysOfWeek[iDay-1];
             Console.WriteLine($"That day is {chosenDay}");
         }
     }
