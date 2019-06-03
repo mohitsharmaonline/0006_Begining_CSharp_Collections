@@ -10,6 +10,7 @@ namespace DaysOfWeekList
     {
         static void Main(string[] args)
         {
+            List<string> daysOfWeek = new List<string>();
         }
     }
 }
