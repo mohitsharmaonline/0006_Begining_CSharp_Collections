@@ -19,6 +19,7 @@ namespace ImportingDataInArrayDemo
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
+            Console.WriteLine($"{countries.Count} countries");
         }
     }
 }
