@@ -17,7 +17,7 @@ namespace ImportingDataInArrayDemo
 
             foreach (Country country in countries)
             {
-                Console.WriteLine($"{country.Population}: {country.Name}");
+                Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
         }
     }
