@@ -14,6 +14,9 @@ namespace ImportingDataInArrayDemo
             CsvReader reader = new CsvReader(filePath);
 
             List<Country> countries = reader.ReadAllCountries();
+            Country lilliput = new Country("Lilliput", "LIL", "Somewhere", 2_000_000);
+            int lilliputIndex;
+            countries.Insert(lilliputIndex, lilliput);
 
             foreach (Country country in countries)
             {
