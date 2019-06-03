@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ImportingDataInArrayDemo
@@ -12,9 +13,9 @@ namespace ImportingDataInArrayDemo
             this._csvFilePath = _csvFilePath;
         }
 
-        internal Country[] ReadFirstNCountries(int nCountries)
+        internal List<Country> ReadAllCountries()
         {
-            Country[] countries = new Country[nCountries];
+            List<Country> countries = new List<Country>();
             using (StreamReader sr = new StreamReader(_csvFilePath))
             {
                 // Read header line
