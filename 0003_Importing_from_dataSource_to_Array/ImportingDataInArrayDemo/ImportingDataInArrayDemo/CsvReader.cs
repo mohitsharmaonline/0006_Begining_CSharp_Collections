@@ -21,10 +21,10 @@ namespace ImportingDataInArrayDemo
                 // Read header line
                 sr.ReadLine();
 
-                for (int i = 0; i < nCountries; i++)
+                string csvLine;
+                while ((csvLine = sr.ReadLine()) != null)
                 {
-                    string csvLine = sr.ReadLine();
-                    countries[i] = ReadCountryFromCsvLine(csvLine);
+                    countries.Add(ReadCountryFromCsvLine(csvLine));
                 }
             }
 
