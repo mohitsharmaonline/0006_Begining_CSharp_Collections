@@ -20,7 +20,7 @@ namespace BasicDictionaryDemo
 
             foreach(var country in countries)
             {
-                Console.WriteLine(country);
+                Console.WriteLine(country.Value.Name);
             }
         }
     }
