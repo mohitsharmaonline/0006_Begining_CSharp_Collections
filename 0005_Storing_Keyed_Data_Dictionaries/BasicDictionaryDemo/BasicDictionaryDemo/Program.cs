@@ -13,16 +13,26 @@ namespace BasicDictionaryDemo
             Country norway = new Country("Norway", "NOR", "Europe", 5_282_223);
             Country finland = new Country("Finland", "FIN", "Europe", 5_511_383);
 
-            Dictionary<string, Country> countries = new Dictionary<string, Country>
-            {
-                { norway.Code, norway },
-                { finland.Code, finland }
-            };
+            //Dictionary<string, Country> countries = new Dictionary<string, Country>
+            //{
+            //    { norway.Code, norway },
+            //    { finland.Code, finland }
+            //};
 
-            foreach (var country in countries.Values)
+            //foreach (var country in countries.Values)
+            //{
+            //    Console.WriteLine(country.Name);
+            //}
+
+            List<Country> countrieslst = new List<Country>();
+            countrieslst.Add(norway);
+            countrieslst.Add(norway);
+
+            foreach (var country in countrieslst)
             {
                 Console.WriteLine(country.Name);
             }
+
         }
     }
 }
