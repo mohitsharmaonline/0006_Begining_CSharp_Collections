@@ -15,8 +15,8 @@ namespace BasicDictionaryDemo
 
             Dictionary<string, Country> countries = new Dictionary<string, Country>();
 
-            countries.Add("NOR", norway);
-            countries.Add("FIN", finland);
+            countries.Add(norway.Code, norway);
+            countries.Add(finland.Code, finland);
         }
     }
 }
