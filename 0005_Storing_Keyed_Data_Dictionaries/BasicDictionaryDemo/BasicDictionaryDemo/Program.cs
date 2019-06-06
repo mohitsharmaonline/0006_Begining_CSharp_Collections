@@ -15,22 +15,14 @@ namespace BasicDictionaryDemo
 
             Dictionary<string, Country> countries = new Dictionary<string, Country>();
             countries.Add(norway.Code, norway);
-            countries.Add(norway.Code, norway);
+            countries.Add(finland.Code, finland);
+
+            Console.WriteLine(countries["MUS"].Name);
             
             foreach (var country in countries.Values)
             {
                 Console.WriteLine(country.Name);
-            }
-
-            //List<Country> countrieslst = new List<Country>();
-            //countrieslst.Add(norway);
-            //countrieslst.Add(norway);
-
-            //foreach (var country in countrieslst)
-            //{
-            //    Console.WriteLine(country.Name);
-            //}
-
+            }            
         }
     }
 }
