@@ -67,13 +67,7 @@ namespace ImportingDataInArrayDemo
 
         public void RemoveCommaCountries(List<Country> countries)
         {
-            for (int i = countries.Count - 1; i >= 0; i--)
-            {
-                if(countries[i].Name.Contains(","))
-                {
-                    countries.RemoveAt(i);
-                }
-            }
+            countries.RemoveAll(country => country.Name.Contains(","));
         }
     }
 }
