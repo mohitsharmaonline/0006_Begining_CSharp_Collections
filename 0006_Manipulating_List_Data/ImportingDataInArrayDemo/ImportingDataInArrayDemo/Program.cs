@@ -19,11 +19,12 @@ namespace ImportingDataInArrayDemo
             countries.Insert(lilliputIndex, lilliput);
             countries.RemoveAt(lilliputIndex);
 
-            foreach (Country country in countries)
+            //foreach (Country country in countries)
+            for(int i = 0; i < countries.Count; i++)
             {
+                Country country = countries[i];
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
-            Console.WriteLine($"{countries.Count} countries");
         }
     }
 }
