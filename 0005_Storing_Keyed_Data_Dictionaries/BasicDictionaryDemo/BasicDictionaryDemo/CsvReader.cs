@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BasicDictionaryDemo;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace ImportingDataInArrayDemo
+namespace BasicDictionaryDemo
 {
     internal class CsvReader
     {
