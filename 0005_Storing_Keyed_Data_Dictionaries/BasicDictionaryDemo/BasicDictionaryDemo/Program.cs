@@ -17,12 +17,13 @@ namespace BasicDictionaryDemo
             countries.Add(norway.Code, norway);
             countries.Add(finland.Code, finland);
 
-            Console.WriteLine(countries["MUS"].Name);
-            
-            foreach (var country in countries.Values)
-            {
+            //Console.WriteLine(countries["MUS"].Name);
+            bool exists = countries.TryGetValue("MUS", out Country country);
+
+            if (exists)
                 Console.WriteLine(country.Name);
-            }            
+            else
+                Console.WriteLine("There is no country with code MUS.");                        
         }
     }
 }
