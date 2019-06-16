@@ -14,13 +14,16 @@ namespace ImportingDataInArrayDemo
             CsvReader reader = new CsvReader(filePath);
 
             List<Country> countries = reader.ReadAllCountries();
-            Country lilliput = new Country("Lilliput", "LIL", "Somewhere", 2_000_000);
-            int lilliputIndex = countries.FindIndex(country => country.Population < 2_000_000);
-            countries.Insert(lilliputIndex, lilliput);
-            countries.RemoveAt(lilliputIndex);
+            Console.WriteLine("Enter no. of countries to display? ");
+            bool inputIsInt = int.TryParse(Console.ReadLine(), out int userInput);
+            if(!inputIsInt || userInput <= 0)
+            {
+                Console.WriteLine("You must enter a +ve integer. Exiting");
+                return;
+            }
 
-            //foreach (Country country in countries)
-            for(int i = 0; i < countries.Count; i++)
+            int maxToDisplay = Math.Min(userInput, countries.Count);
+            for(int i = 0; i < maxToDisplay; i++)
             {
                 Country country = countries[i];
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
