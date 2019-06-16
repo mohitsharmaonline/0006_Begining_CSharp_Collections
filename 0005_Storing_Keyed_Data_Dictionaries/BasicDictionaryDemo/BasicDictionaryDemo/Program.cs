@@ -10,20 +10,22 @@ namespace BasicDictionaryDemo
     {
         static void Main(string[] args)
         {
-            Country norway = new Country("Norway", "NOR", "Europe", 5_282_223);
-            Country finland = new Country("Finland", "FIN", "Europe", 5_511_383);
+            string filePath = @"C:\Users\mohit\Documents\0006_Begining_CSharp_Collections\0003_Importing_from_dataSource_to_Array\data\Pop by Largest Final.csv";
+            CsvReader reader = new CsvReader(filePath);
+            Dictionary<string, Country> countries = reader.ReadAllCountries();
 
-            Dictionary<string, Country> countries = new Dictionary<string, Country>();
-            countries.Add(norway.Code, norway);
-            countries.Add(finland.Code, finland);
+            Console.WriteLine("Which country do you want to look up?");
+            string userInput = Console.ReadLine();
 
-            //Console.WriteLine(countries["MUS"].Name);
-            bool exists = countries.TryGetValue("MUS", out Country country);
-
-            if (exists)
-                Console.WriteLine(country.Name);
+            bool gotCountry = countries.TryGetValue(userInput, out Country country);
+            if(!gotCountry)
+            {
+                Console.WriteLine($"sorry, there is no country with the code, {userInput}");
+            }
             else
-                Console.WriteLine("There is no country with code MUS.");                        
+            {
+                Console.WriteLine($"{country.Name} hass population {PopulationFormatter.FormatPopulation(country.Population)}");
+            }
         }
     }
 }
