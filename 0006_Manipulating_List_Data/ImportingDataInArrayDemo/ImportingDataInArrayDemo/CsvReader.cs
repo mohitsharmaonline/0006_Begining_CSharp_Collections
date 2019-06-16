@@ -64,5 +64,16 @@ namespace ImportingDataInArrayDemo
             int.TryParse(popText, out int population);
             return new Country(name, code, region, population);
         }
+
+        public void RemoveCommaCountries(List<Country> countries)
+        {
+            for (int i = 0; i < countries.Count; i++)
+            {
+                if(countries[i].Name.Contains(","))
+                {
+                    countries.RemoveAt(i);
+                }
+            }
+        }
     }
 }
