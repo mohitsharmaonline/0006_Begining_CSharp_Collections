@@ -15,11 +15,11 @@ namespace ImportingDataInArrayDemo
 
             List<Country> countries = reader.ReadAllCountries();    
 
-            foreach (Country country in countries)
+            foreach (Country country in countries.Take(10))
             {
-                Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
+                Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}:" +
+                    $" {country.Name}");
             }
-            Console.WriteLine($"{countries.Count} countries");
         }
     }
 }
