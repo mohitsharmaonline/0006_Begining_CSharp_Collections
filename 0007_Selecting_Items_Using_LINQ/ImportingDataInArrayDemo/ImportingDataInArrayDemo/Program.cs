@@ -15,7 +15,7 @@ namespace ImportingDataInArrayDemo
 
             List<Country> countries = reader.ReadAllCountries();
 
-            foreach (Country country in countries.OrderBy(country => country.Name))
+            foreach (Country country in countries.OrderBy(country => country.Name).Take(10))
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}:" +
                     $" {country.Name}");
