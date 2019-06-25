@@ -13,11 +13,7 @@ namespace ImportingDataInArrayDemo
             string filePath = @"C:\Users\mohit\Documents\0006_Begining_CSharp_Collections\0003_Importing_from_dataSource_to_Array\data\Pop by Largest Final.csv";
             CsvReader reader = new CsvReader(filePath);
 
-            List<Country> countries = reader.ReadAllCountries();
-            Country lilliput = new Country("Lilliput", "LIL", "Somewhere", 2_000_000);
-            int lilliputIndex = countries.FindIndex(country => country.Population < 2_000_000);
-            countries.Insert(lilliputIndex, lilliput);
-            countries.RemoveAt(lilliputIndex);
+            List<Country> countries = reader.ReadAllCountries();    
 
             foreach (Country country in countries)
             {
