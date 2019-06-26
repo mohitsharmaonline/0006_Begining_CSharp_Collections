@@ -15,7 +15,8 @@ namespace ImportingDataInArrayDemo
 
             List<Country> countries = reader.ReadAllCountries();
 
-            foreach (Country country in countries.Where(country => !country.Name.Contains(",")).Take(20))
+            var filteredCountries = countries.Where(country => !country.Name.Contains(",")).Take(20);
+            foreach (Country country in filteredCountries)
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}:" +
                     $" {country.Name}");
