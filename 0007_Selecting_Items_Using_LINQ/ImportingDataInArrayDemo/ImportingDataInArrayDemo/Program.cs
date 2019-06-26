@@ -20,6 +20,11 @@ namespace ImportingDataInArrayDemo
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}:" +
                     $" {country.Name}");
             }
+
+            for (int i = 12; i <= 14; i++)
+            {
+                Console.WriteLine(countries[i].Name);
+            }
         }
     }
 }
