@@ -13,9 +13,9 @@ namespace ImportingDataInArrayDemo
             this._csvFilePath = _csvFilePath;
         }
 
-        internal List<Country> ReadAllCountries()
+        internal Dictionary<string, List<Country>> ReadAllCountries()
         {
-            List<Country> countries = new List<Country>();
+            var countries = new Dictionary<string, List<Country>>();
             using (StreamReader sr = new StreamReader(_csvFilePath))
             {
                 // Read header line
@@ -24,7 +24,16 @@ namespace ImportingDataInArrayDemo
                 string csvLine;
                 while ((csvLine = sr.ReadLine()) != null)
                 {
-                    countries.Add(ReadCountryFromCsvLine(csvLine));
+                    Country country = ReadCountryFromCsvLine(csvLine);
+                    if(countries.ContainsKey(country.Region))
+                    {
+                        countries[country.Region].Add(country);
+                    }
+                    else
+                    {
+                        List<Country> countriesInRegion = new List<Country>() { country };
+                        countries.Add(country.Region, countriesInRegion);
+                    }
                 }
             }
 
