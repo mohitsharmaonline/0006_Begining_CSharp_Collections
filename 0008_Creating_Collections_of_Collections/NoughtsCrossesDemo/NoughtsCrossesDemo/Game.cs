@@ -52,13 +52,13 @@ namespace NoughtsCrossesDemo
                 return false;
             }
 
-            if(_board[row - 1][column - 1].Owner != Player.None)
+            if(_board[row - 1,column - 1].Owner != Player.None)
             {
                 Console.WriteLine("Square is already occupied");
                 return false;
             }
 
-            _board[row - 1][column - 1] = new Square(player);
+            _board[row - 1, column - 1] = new Square(player);
             return true;
         }
 
@@ -68,7 +68,7 @@ namespace NoughtsCrossesDemo
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    Console.Write(" " + _board[i][j]);
+                    Console.Write(" " + _board[i, j]);
                 }
                 Console.WriteLine();
             }
