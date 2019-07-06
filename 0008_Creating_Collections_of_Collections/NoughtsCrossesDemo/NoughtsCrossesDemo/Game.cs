@@ -8,12 +8,14 @@ namespace NoughtsCrossesDemo
 {
     public class Game
     {
-        private Square[][] _board =
-        {
-            new Square[3],
-            new Square[3],
-            new Square[3]
-        };
+        //private Square[][] _board =
+        //{
+        //    new Square[3],
+        //    new Square[3],
+        //    new Square[3]
+        //};
+
+        private Square[,] _board = new Square[3, 3];
 
         internal void PlayGame()
         {
