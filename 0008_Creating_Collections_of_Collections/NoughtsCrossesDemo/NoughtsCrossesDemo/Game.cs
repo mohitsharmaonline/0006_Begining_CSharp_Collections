@@ -14,5 +14,10 @@ namespace NoughtsCrossesDemo
             new Square[3],
             new Square[3]
         };
+
+        internal void PlayGame()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
